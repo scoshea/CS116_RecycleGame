@@ -37,6 +37,7 @@ public class throwTrash : MonoBehaviour {
         if(coll.gameObject.tag == "recycle")
         {
             scoreKeeper.score += 1;
+			BarManager.currentValue += 5;
             Destroy(transform.parent.gameObject);
         }
     }

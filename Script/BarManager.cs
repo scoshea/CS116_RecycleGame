@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class BarManager : MonoBehaviour {
 
 	public Slider moneyBar;
-	public float startingValue = 1000.0F;
-	public float currentValue;
+	public static float startingValue = 50.0F;
+	public static float currentValue;
+
 
 	// Use this for initialization
 	void Start () {
@@ -16,18 +17,14 @@ public class BarManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currentValue -= 0.5F;
+		currentValue -= 0.05F;
+		//moneyBar.value = currentValue;
+		/*if (scoreKeeper.score > 0) {
+			currentValue = scoreKeeper.score;
+			moneyBar.value = currentValue;
+			
+		}*/
 		moneyBar.value = currentValue;
 	}
-
-	/*void OnTriggerEnter2D(Collider2D coll)
-	{
-		if (coll.gameObject.tag == "recycle") {
-			currentValue += 1;
-			moneyBar.value = currentValue;
-		} else {
-			currentValue -= 0.5F;
-			moneyBar.value = currentValue;
-		}
-	}*/
+		
 }
