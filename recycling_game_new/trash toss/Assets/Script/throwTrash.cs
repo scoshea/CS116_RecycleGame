@@ -8,6 +8,18 @@ public class throwTrash : MonoBehaviour {
     private Vector3 newMousePosition;
     private Vector3 force;
     private Rigidbody2D rb;
+    private bool moveByBelt;
+
+    void Start()
+    {
+        moveByBelt = true;
+    }
+
+    void Update()
+    {
+        if (moveByBelt)
+            transform.Translate(Vector3.down * difficultySettings.moveSpeed);
+    }
 
     void OnMouseDown()
     {
@@ -16,6 +28,7 @@ public class throwTrash : MonoBehaviour {
 
     void OnMouseUp()
     {
+        moveByBelt = false;
         newMousePosition = Input.mousePosition;
         force = newMousePosition - lastMoustPosition;
         rb = GetComponent<Rigidbody2D>();
@@ -36,7 +49,7 @@ public class throwTrash : MonoBehaviour {
     {
         if(coll.gameObject.tag == "recycle")
         {
-            scoreKeeper.score += 1;
+            difficultySettings.score += 1;
             Destroy(gameObject);
         }
     }

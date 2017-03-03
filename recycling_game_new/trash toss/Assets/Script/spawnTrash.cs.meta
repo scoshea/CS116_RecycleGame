@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: f521c66671c48a24cb067fdb8c4c4e0d
-timeCreated: 1486117612
+timeCreated: 1488538528
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - trash_1: {fileID: 188864, guid: 05a07b8ef4becd345920e93de9e698bf, type: 2}
-  - trash_2: {fileID: 129202, guid: 8095d03f7784cd44284986dedb5c9022, type: 2}
+  - trash_1: {fileID: 1901063879786206, guid: 05a07b8ef4becd345920e93de9e698bf, type: 2}
+  - trash_2: {fileID: 1447891056278434, guid: 8095d03f7784cd44284986dedb5c9022, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

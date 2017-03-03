@@ -16,6 +16,7 @@ public class startGame : MonoBehaviour
 
     void TaskOnClick()
     {
+        difficultySettings.isStarted = true;
         spawnFunc.spawn();
         transform.FindChild("game start").gameObject.SetActive(false);
     }

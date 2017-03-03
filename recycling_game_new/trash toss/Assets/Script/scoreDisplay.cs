@@ -15,6 +15,6 @@ public class scoreDisplay : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        text.text = "score: " + scoreKeeper.score.ToString();
+        text.text = "score: " + difficultySettings.score.ToString();
     }
 }
