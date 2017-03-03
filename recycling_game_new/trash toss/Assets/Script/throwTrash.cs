@@ -10,9 +10,22 @@ public class throwTrash : MonoBehaviour {
     private Rigidbody2D rb;
     private bool moveByBelt;
 
+	GameObject compost;
+	Animator compostanim;
+
+	GameObject landfill;
+	Animator landfillanim;
+
     void Start()
     {
         moveByBelt = true;
+
+		//starts idle animations
+		compost = GameObject.FindGameObjectWithTag ("composite");
+		compostanim = compost.GetComponent<Animator> ();
+
+		landfill = GameObject.FindGameObjectWithTag ("landfill");
+		landfillanim = landfill.GetComponent<Animator> ();
     }
 
     void Update()
@@ -35,6 +48,8 @@ public class throwTrash : MonoBehaviour {
         rb.isKinematic = false;
         rb.AddForce(force * multiplier);
         Destroy(gameObject, destroyTime);
+		compostanim.SetInteger ("State", 0); //restarts compost idle animation
+		landfillanim.SetInteger ("State", 0); //restarts landfill idle animation
     }
 
     /*void OnMouseDrag()
@@ -52,5 +67,18 @@ public class throwTrash : MonoBehaviour {
             difficultySettings.score += 1;
             Destroy(gameObject);
         }
+
+		if(coll.gameObject.tag == "composite")
+		{
+			difficultySettings.score += 1;
+			compostanim.SetInteger ("State", 1); //switches idle to eating animation
+			Destroy(gameObject);
+		}
+
+		if (coll.gameObject.tag == "landfill") {
+			difficultySettings.score += 1;
+			landfillanim.SetInteger ("State", 1); //switches idle to eating animation
+			Destroy(gameObject);
+		}
     }
 }
