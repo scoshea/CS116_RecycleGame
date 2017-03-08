@@ -26,4 +26,9 @@ public class levelManager : MonoBehaviour {
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentIndex - 1);
     }
+
+	public void LoadDiffScene(){
+		int currentIndex = SceneManager.GetActiveScene ().buildIndex;
+		SceneManager.LoadScene (currentIndex + 2);
+	}
 }

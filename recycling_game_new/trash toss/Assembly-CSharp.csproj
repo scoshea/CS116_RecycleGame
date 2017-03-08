@@ -50,7 +50,6 @@
      <Compile Include="Assets\Script\difficultySettings.cs" />
      <Compile Include="Assets\Script\levelManager.cs" />
      <Compile Include="Assets\Script\onDestroy.cs" />
-     <Compile Include="Assets\Script\sceneManager.cs" />
      <Compile Include="Assets\Script\scoreDisplay.cs" />
      <Compile Include="Assets\Script\selectLevel.cs" />
      <Compile Include="Assets\Script\spawnTrash.cs" />
