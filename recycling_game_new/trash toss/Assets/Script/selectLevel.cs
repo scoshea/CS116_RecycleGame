@@ -24,6 +24,6 @@ public class selectLevel : MonoBehaviour
     void selectLevel1()
     {
         settings.setDifficulty(10, 1, .01f, .05f, 10);
-        levelManager.LoadPreviousScene();
+		levelManager.LoadNextScene();
     }
 }
