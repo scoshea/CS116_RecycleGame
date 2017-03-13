@@ -16,5 +16,6 @@ public class startGame : MonoBehaviour
     {
         difficultySettings.isStarted = true;
         transform.FindChild("game start").gameObject.SetActive(false);
+		transform.FindChild ("Level Panel").gameObject.SetActive (false);
     }
 }
