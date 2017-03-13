@@ -4,8 +4,6 @@ using System.Collections;
 
 public class startGame : MonoBehaviour
 {
-
-    public spawnTrash spawnFunc;
     public Button startbutton;
 
     void Start()
@@ -17,7 +15,6 @@ public class startGame : MonoBehaviour
     void TaskOnClick()
     {
         difficultySettings.isStarted = true;
-        spawnFunc.spawn();
         transform.FindChild("game start").gameObject.SetActive(false);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class throwTrash : MonoBehaviour {
+    public float digestionTime;
     public float multiplier;
     public int destroyTime;
     private Vector3 lastMoustPosition;
@@ -9,6 +10,8 @@ public class throwTrash : MonoBehaviour {
     private Vector3 force;
     private Rigidbody2D rb;
     private bool moveByBelt;
+    private float timer;
+
 
 	GameObject compost;
 	Animator compostanim;
@@ -32,6 +35,7 @@ public class throwTrash : MonoBehaviour {
     {
         if (moveByBelt)
             transform.Translate(Vector3.down * difficultySettings.moveSpeed);
+        print(timer);
     }
 
     void OnMouseDown()
@@ -62,23 +66,25 @@ public class throwTrash : MonoBehaviour {
     
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if(coll.gameObject.tag == "recycle")
+        if (coll.gameObject.tag == gameObject.tag)
         {
             difficultySettings.score += 1;
+            if (gameObject.tag == "recycle")
+            {
+                difficultySettings.digestionTime_rec = digestionTime;
+            }
+
+            if (gameObject.tag == "composite")
+            {
+                difficultySettings.digestionTime_com = digestionTime;
+                compostanim.SetInteger("State", 1); //switches idle to eating animation
+            }
+
+            if (gameObject.tag == "landfill")
+            {
+                landfillanim.SetInteger("State", 1); //switches idle to eating animation
+            }
             Destroy(gameObject);
         }
-
-		if(coll.gameObject.tag == "composite")
-		{
-			difficultySettings.score += 1;
-			compostanim.SetInteger ("State", 1); //switches idle to eating animation
-			Destroy(gameObject);
-		}
-
-		if (coll.gameObject.tag == "landfill") {
-			difficultySettings.score += 1;
-			landfillanim.SetInteger ("State", 1); //switches idle to eating animation
-			Destroy(gameObject);
-		}
     }
 }

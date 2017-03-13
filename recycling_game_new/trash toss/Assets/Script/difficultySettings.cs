@@ -12,6 +12,9 @@ public class difficultySettings : MonoBehaviour {
     public static float moveSpeed;
     public static int levelGoal;
     public static int landfillLimit;
+    public static float spawnGap;
+    public static float digestionTime_rec;
+    public static float digestionTime_com;
 
     // Use this for initialization
     void Start ()
@@ -29,23 +32,25 @@ public class difficultySettings : MonoBehaviour {
     {
         if (isStarted)
             timer += Time.deltaTime;
+        //print(timer);
 
         //lever goal
         if (score == levelGoal)
-            levelManager.LoadNextScene();
+            levelManager.LoadPreviousScene();
 
         //game over
         if (landfillCounter == landfillLimit)
-            levelManager.LoadNextScene();       
+            levelManager.LoadPreviousScene();       
 	}
 
-    public void setDifficulty(int goal, float gain, float drop, float speed, int limit)
+    public void setDifficulty(int goal, float gain, float drop, float speed, int limit, float gap)
     {
         setGoal(goal);
         setGainRate(gain);
         setDropRate(drop);
         setSpeed(speed);
         setLimit(limit);
+        setSpawnGap(gap);
     }
 
     private void setGoal(int goal) { levelGoal = goal; }
@@ -53,5 +58,6 @@ public class difficultySettings : MonoBehaviour {
     private void setDropRate(float rate) { barDropRate = rate; }
     private void setSpeed(float speed) { moveSpeed = speed; }
     private void setLimit(int limit) { landfillLimit = limit; }
+    private void setSpawnGap(float gap) { spawnGap = gap; }
 
 }

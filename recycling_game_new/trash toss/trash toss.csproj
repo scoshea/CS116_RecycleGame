@@ -76,11 +76,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\BarScript.cs" />
+    <Compile Include="Assets\Script\binScript_com.cs" />
+    <Compile Include="Assets\Script\binScript_rec.cs" />
     <Compile Include="Assets\Script\difficultySettings.cs" />
     <Compile Include="Assets\Script\levelManager.cs" />
-    <Compile Include="Assets\Script\onDestroy.cs" />
     <Compile Include="Assets\Script\scoreDisplay.cs" />
     <Compile Include="Assets\Script\selectLevel.cs" />
+    <Compile Include="Assets\Script\spawnSystem.cs" />
     <Compile Include="Assets\Script\spawnTrash.cs" />
     <Compile Include="Assets\Script\startGame.cs" />
     <Compile Include="Assets\Script\startsetting.cs" />
