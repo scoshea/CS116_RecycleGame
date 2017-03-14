@@ -11,12 +11,15 @@ public class spawnSystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        time += Time.deltaTime;
-
-        if(time > difficultySettings.spawnGap)
+        if(difficultySettings.isStarted)
         {
-            spawnFunc.spawn();
-            time = 0;
+            time += Time.deltaTime;
+
+            if (time > difficultySettings.spawnGap)
+            {
+                spawnFunc.spawn();
+                time = 0;
+            }
         }
 	}
 }

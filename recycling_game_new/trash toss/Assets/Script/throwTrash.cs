@@ -10,7 +10,6 @@ public class throwTrash : MonoBehaviour {
     private Vector3 force;
     private Rigidbody2D rb;
     private bool moveByBelt;
-    private float timer;
 
 
 	GameObject compost;
@@ -35,7 +34,6 @@ public class throwTrash : MonoBehaviour {
     {
         if (moveByBelt)
             transform.Translate(Vector3.down * difficultySettings.moveSpeed);
-        print(timer);
     }
 
     void OnMouseDown()

@@ -32,7 +32,7 @@ public class difficultySettings : MonoBehaviour {
     {
         if (isStarted)
             timer += Time.deltaTime;
-        //print(timer);
+        print(timer);
 
         //lever goal
         if (score == levelGoal)
