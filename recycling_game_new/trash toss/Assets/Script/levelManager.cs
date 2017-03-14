@@ -34,6 +34,10 @@ public class levelManager : MonoBehaviour {
 		SceneManager.LoadScene (currentIndex + 2);
 	}
 
+	public void LoadTitleScene(){
+		SceneManager.LoadScene (0);
+	}
+
 	public void LoadManualScene(string scene){
 		SceneManager.LoadScene (scene);
 	}

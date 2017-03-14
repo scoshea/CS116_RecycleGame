@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\startGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\levelManager.cs">
     <Files>
       <File FileName="Assets\Script\BarScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\startGame.cs" Line="19" Column="68" />
-      <File FileName="Assets\Script\levelManager.cs" Line="7" Column="22" />
+      <File FileName="Assets\Script\startGame.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\levelManager.cs" Line="38" Column="30" />
       <File FileName="Assets\Script\difficultySettings.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\selectLevel.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\throwTrash.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\spawnTrash.cs" Line="21" Column="1" />
+      <File FileName="Assets\Script\spawnTrash.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
