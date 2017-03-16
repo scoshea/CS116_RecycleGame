@@ -22,12 +22,13 @@ public class throwTrash : MonoBehaviour {
     {
         moveByBelt = true;
 
-		//starts idle animations
-		compost = GameObject.FindGameObjectWithTag ("composite");
+        //starts idle animations
+        compost = GameObject.Find("composite bin");
 		compostanim = compost.GetComponent<Animator> ();
 
-		landfill = GameObject.FindGameObjectWithTag ("landfill");
+        landfill = GameObject.Find("landfill bin");
 		landfillanim = landfill.GetComponent<Animator> ();
+
     }
 
     void Update()

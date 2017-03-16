@@ -5,6 +5,7 @@ using UnityEngine;
 public class difficultySettings : MonoBehaviour {
     public static float timer;
     public static bool isStarted;
+    public static bool isCompleted;
     public static int score;
     public static int landfillCounter;
     public static float barGainRate;
@@ -20,6 +21,7 @@ public class difficultySettings : MonoBehaviour {
     void Start ()
     {
         isStarted = false;
+        isCompleted = false;
         score = 0;
         landfillCounter = 0;
         //setDifficulty(10, 1, .01f, .05f, 10);
@@ -32,11 +34,13 @@ public class difficultySettings : MonoBehaviour {
     {
         if (isStarted)
             timer += Time.deltaTime;
-        print(timer);
+        //print(timer);
+
 
         //lever goal
         if (score == levelGoal)
-            levelManager.LoadPreviousScene();
+            isCompleted = true;
+        
 
         //game over
         if (landfillCounter == landfillLimit)

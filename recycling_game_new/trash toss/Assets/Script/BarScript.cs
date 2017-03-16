@@ -19,8 +19,8 @@ public class BarScript :MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //print(difficultySettings.timer);
-		HandleBar ();
+        if(difficultySettings.isStarted & !difficultySettings.isCompleted)
+		    HandleBar ();
 	}
 
 

@@ -23,7 +23,7 @@ public class selectLevel : MonoBehaviour
 
     void selectLevel1()
     {
-        settings.setDifficulty(10, 1, .01f, .05f, 10, 2f);
+        settings.setDifficulty(5, 1, .01f, .05f, 10, 2f);
 		levelManager.LoadNextScene();
     }
 }

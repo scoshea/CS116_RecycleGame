@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class binScript_com : MonoBehaviour {
 
+    public Shader grayscale;
+    private Shader defaultShader;
     private bool isDigesting = false;
     private float timer = 0;
+
+    void Start()
+    {
+        defaultShader = gameObject.GetComponent<Renderer>().material.shader;
+    }
 
     private void Update()
     {
         if (isDigesting == true)
         {
+            gameObject.GetComponent<Renderer>().material.shader = grayscale;
             timer += Time.deltaTime;
             if (timer >= difficultySettings.digestionTime_com)
             {
+                gameObject.GetComponent<Renderer>().material.shader = defaultShader;
                 gameObject.GetComponent<Collider2D>().enabled = true;
                 isDigesting = false;
                 timer = 0;
