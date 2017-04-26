@@ -6,6 +6,7 @@ public class startGame : MonoBehaviour
 {
     public Button startButton;
     public Button completeButton;
+	//public Button zbc;
 
     void Start()
     {
@@ -13,6 +14,8 @@ public class startGame : MonoBehaviour
         start.onClick.AddListener(startOnClick);
         Button complete = completeButton.GetComponent<Button>();
         complete.onClick.AddListener(completeOnClick);
+		//Button test = zbc.GetComponent<Button> ();
+		//test.onClick.AddListener (change);
     }
 
     void Update()
@@ -35,8 +38,13 @@ public class startGame : MonoBehaviour
     {
         disable(completeButton.gameObject);
         disable(transform.FindChild("Level complete").gameObject);
-        levelManager.LoadPreviousScene();
+        levelManager.LoadPlayScene();
     }
+
+	/*void change()
+	{
+		difficultySettings.spawnGap = .1f;
+	}*/
 
     private void enable(GameObject obj) { obj.SetActive(true); }
     private void disable(GameObject obj) { obj.SetActive(false); }

@@ -23,7 +23,7 @@ public class difficultySettings : MonoBehaviour {
         isStarted = false;
         isCompleted = false;
         score = 0;
-        landfillCounter = 0;
+        landfillCounter = 1;
         //setDifficulty(10, 1, .01f, .05f, 10);
         print("game start: level goal: " + levelGoal + "    gainRate: " + barGainRate + "    dropRate" + barDropRate
             + "    speed: " + moveSpeed + "    limit: " + landfillLimit);
@@ -43,8 +43,8 @@ public class difficultySettings : MonoBehaviour {
         
 
         //game over
-        if (landfillCounter == landfillLimit)
-            levelManager.LoadPreviousScene();       
+		if (landfillCounter == landfillLimit)
+			levelManager.LoadTitleScene ();
 	}
 
     public void setDifficulty(int goal, float gain, float drop, float speed, int limit, float gap)

@@ -7,6 +7,10 @@ public class selectLevel : MonoBehaviour
 {
     public difficultySettings settings;
     public Button level1;
+	public Button level2;
+	public Button level3;
+	public Button level4;
+	public Button level5;
 
 
 	// Use this for initialization
@@ -14,6 +18,14 @@ public class selectLevel : MonoBehaviour
     {
         Button lvl1 = level1.GetComponent<Button>();
         lvl1.onClick.AddListener(selectLevel1);
+		Button lvl2 = level2.GetComponent<Button>();
+		lvl2.onClick.AddListener(selectLevel2);
+		Button lvl3 = level3.GetComponent<Button>();
+		lvl3.onClick.AddListener(selectLevel3);
+		Button lvl4 = level4.GetComponent<Button>();
+		lvl4.onClick.AddListener(selectLevel4);
+		Button lvl5 = level5.GetComponent<Button>();
+		lvl5.onClick.AddListener(selectLevel5);
 	}
 	
 	// Update is called once per frame
@@ -23,7 +35,31 @@ public class selectLevel : MonoBehaviour
 
     void selectLevel1()
     {
-        settings.setDifficulty(5, 1, .01f, .05f, 10, 2f);
+        settings.setDifficulty(5, 0, 0, 0, 10, 2f);
 		levelManager.LoadNextScene();
     }
+
+	void selectLevel2()
+	{
+		settings.setDifficulty(10, 0, 0, 0, 10, 2f);
+		levelManager.LoadNextScene();
+	}
+
+	void selectLevel3()
+	{
+		settings.setDifficulty(15, 0, 0, 0, 10, 2f);
+		levelManager.LoadNextScene();
+	}
+
+	void selectLevel4()
+	{
+		settings.setDifficulty(20, 0, 0, 0, 10, 2f);
+		levelManager.LoadNextScene();
+	}
+
+	void selectLevel5()
+	{
+		settings.setDifficulty(25, 0, 0, 0, 10, 2f);
+		levelManager.LoadNextScene();
+	}
 }

@@ -29,16 +29,20 @@ public class levelManager : MonoBehaviour {
         SceneManager.LoadScene(currentIndex - 1);
     }
 
-	public void LoadDiffScene(){
+	public void LoadMapScene(){
 		int currentIndex = SceneManager.GetActiveScene ().buildIndex;
-		SceneManager.LoadScene (currentIndex + 2);
+		SceneManager.LoadScene (2);
 	}
 
-	public void LoadTitleScene(){
+	public static void LoadPlayScene(){
+		SceneManager.LoadScene (4);
+	}
+
+	public static void LoadTitleScene(){
 		SceneManager.LoadScene (0);
 	}
 
-	public void LoadManualScene(string scene){
+	public static void LoadManualScene(string scene){
 		SceneManager.LoadScene (scene);
 	}
 }
