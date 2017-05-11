@@ -5,12 +5,13 @@ public class throwTrash : MonoBehaviour {
     public float digestionTime;
     public float multiplier;
     public int destroyTime;
-    private Vector3 lastMoustPosition;
-    private Vector3 newMousePosition;
-    private Vector3 force;
-    private Rigidbody2D rb;
-    private bool moveByBelt;
 
+    private Vector3 lastMousePosition;
+    private Vector3 newMousePosition;
+	private Vector2 distance;
+	private Vector3 distance2;
+	private Rigidbody2D rb;
+	private bool moveByBelt;
 
 	GameObject compost;
 	Animator compostanim;
@@ -20,49 +21,69 @@ public class throwTrash : MonoBehaviour {
 
     void Start()
     {
-        moveByBelt = true;
+		moveByBelt = true;
 
-        //starts idle animations
-        compost = GameObject.Find("composite bin");
+		//starts idle animations
+		compost = GameObject.Find("composite bin");
 		compostanim = compost.GetComponent<Animator> ();
 
-        landfill = GameObject.Find("landfill bin");
+		landfill = GameObject.Find("landfill bin");
 		landfillanim = landfill.GetComponent<Animator> ();
-
     }
 
     void Update()
     {
-        if (moveByBelt)
-            transform.Translate(Vector3.down * difficultySettings.moveSpeed);
+		if (moveByBelt)
+			transform.Translate(Vector3.down * difficultySettings.moveSpeed);
     }
+		
 
     void OnMouseDown()
     {
-        lastMoustPosition = Input.mousePosition;
+        lastMousePosition = Input.mousePosition;
     }
+
 
     void OnMouseUp()
-    {
-        moveByBelt = false;
-        newMousePosition = Input.mousePosition;
-        force = newMousePosition - lastMoustPosition;
-        rb = GetComponent<Rigidbody2D>();
-        rb.isKinematic = false;
-        rb.AddForce(force * multiplier);
-        Destroy(gameObject, destroyTime);
+	{
+		// disable collider so player cannot swipe twice
+
+		moveByBelt = false;
+		newMousePosition = Input.mousePosition;
+		distance = newMousePosition - lastMousePosition;
+
+		// making sure that x and y values are not 0
+		if (Mathf.Abs(distance.x) < 0.1f)
+			distance.x = 0.1f;
+		if (Mathf.Abs(distance.y) < 0.1f)
+			distance.y = 0.1f;
+		
+		float xsquare = distance.x * distance.x;
+		float ysquare = distance.y * distance.y;
+		distance2 = distance / (Mathf.Sqrt (xsquare + ysquare));
+
+		rb = GetComponent<Rigidbody2D> ();
+		rb.isKinematic = false;
+		rb.AddForce (distance2 * multiplier);
+
+		Destroy (gameObject, destroyTime);
 		compostanim.SetInteger ("State", 0); //restarts compost idle animation
 		landfillanim.SetInteger ("State", 0); //restarts landfill idle animation
-    }
+	}
 
-    /*void OnMouseDrag()
+
+	/*
+    void OnMouseDrag()
     {
         Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
         Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         transform.position = objectPosition;
-    }*/
+    } */
     
+
+    
+	// bin collisions
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == gameObject.tag)
