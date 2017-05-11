@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\spawnTrash.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\throwTrash.cs">
     <Files>
-      <File FileName="Assets\Script\throwTrash.cs" Line="68" Column="3" />
+      <File FileName="Assets\Script\throwTrash.cs" Line="73" Column="2" />
       <File FileName="Assets\Script\difficultySettings.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\spawnTrash.cs" Line="42" Column="21" />
+      <File FileName="Assets\Script\spawnTrash.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
