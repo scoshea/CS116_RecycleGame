@@ -6,6 +6,7 @@ public class startGame : MonoBehaviour
 {
     public Button startButton;
     public Button completeButton;
+	public Animator ani;
 	//public Button zbc;
 
     void Start()
@@ -23,6 +24,7 @@ public class startGame : MonoBehaviour
         if (difficultySettings.score == difficultySettings.levelGoal)
         {
             enable(transform.FindChild("Level complete").gameObject);
+			ani.enabled = false;
             enable(completeButton.gameObject);
         }
     }
