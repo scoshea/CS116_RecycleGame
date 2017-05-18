@@ -14,6 +14,7 @@ public class otherButton : MonoBehaviour {
 		for(int i = 0 ; i < gameObjects.Length ; i ++)
 		{
 			Destroy(gameObjects[i]);
+			difficultySettings.score += 1;
 		}
 	}
 }
