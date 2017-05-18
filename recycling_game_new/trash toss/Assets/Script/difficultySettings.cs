@@ -16,6 +16,9 @@ public class difficultySettings : MonoBehaviour {
     public static float spawnGap;
     public static float digestionTime_rec;
     public static float digestionTime_com;
+	public static List<string> playRecord;
+	public static List<string> failedRecord;
+	public static int levelCounter = 1;
 
     // Use this for initialization
     void Start ()
@@ -24,6 +27,8 @@ public class difficultySettings : MonoBehaviour {
         isCompleted = false;
         score = 0;
         landfillCounter = 1;
+		playRecord = new List<string> ();
+		failedRecord = new List<string> ();
         //setDifficulty(10, 1, .01f, .05f, 10);
         print("game start: level goal: " + levelGoal + "    gainRate: " + barGainRate + "    dropRate" + barDropRate
             + "    speed: " + moveSpeed + "    limit: " + landfillLimit);
