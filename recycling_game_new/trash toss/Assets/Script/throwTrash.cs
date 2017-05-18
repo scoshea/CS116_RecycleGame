@@ -19,6 +19,10 @@ public class throwTrash : MonoBehaviour {
 	GameObject landfill;
 	Animator landfillanim;
 
+
+	GameObject recycle;
+	Animator recycleanim;
+
     void Start()
     {
 		moveByBelt = true;
@@ -29,6 +33,9 @@ public class throwTrash : MonoBehaviour {
 
 		landfill = GameObject.Find("landfill bin");
 		landfillanim = landfill.GetComponent<Animator> ();
+
+		recycle = GameObject.Find ("recycle bin");
+		recycleanim = recycle.GetComponent<Animator> ();
     }
 
     void Update()
@@ -69,6 +76,7 @@ public class throwTrash : MonoBehaviour {
 		Destroy (gameObject, destroyTime);
 		compostanim.SetInteger ("State", 0); //restarts compost idle animation
 		landfillanim.SetInteger ("State", 0); //restarts landfill idle animation
+		recycleanim.SetInteger("State", 0);
 	}
 
 
@@ -79,8 +87,8 @@ public class throwTrash : MonoBehaviour {
         Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         transform.position = objectPosition;
-    } */
-    
+    } 
+    */
 
     
 	// bin collisions
@@ -92,6 +100,7 @@ public class throwTrash : MonoBehaviour {
             if (gameObject.tag == "recycle")
             {
                 difficultySettings.digestionTime_rec = digestionTime;
+				recycleanim.SetInteger ("State", 1);
             }
 
             if (gameObject.tag == "composite")
