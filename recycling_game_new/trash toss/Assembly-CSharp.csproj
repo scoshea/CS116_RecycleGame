@@ -55,6 +55,7 @@
      <Compile Include="Assets\Script\binScript_rec.cs" />
      <Compile Include="Assets\Script\difficultySettings.cs" />
      <Compile Include="Assets\Script\levelManager.cs" />
+     <Compile Include="Assets\Script\otherButton.cs" />
      <Compile Include="Assets\Script\scoreDisplay.cs" />
      <Compile Include="Assets\Script\selectLevel.cs" />
      <Compile Include="Assets\Script\selectMenu.cs" />

@@ -9,6 +9,7 @@ public class spawnTrash : MonoBehaviour {
 	public GameObject trash_4;
 	public GameObject trash_5;
 	public GameObject trash_6;
+	public GameObject trash_7;
     System.Random trashType = new System.Random();
     System.Random offset = new System.Random();
     private float xOffset;
@@ -18,7 +19,7 @@ public class spawnTrash : MonoBehaviour {
         Vector3 spot = GameObject.Find("spawn spot").transform.position;
 		xOffset = 0f; // + (float)offset.NextDouble() * 4;
         Vector3 spawnSpot = spot + new Vector3(xOffset, 2, 0);
-        int caseSwitch = trashType.Next(1, 7);
+        int caseSwitch = trashType.Next(1, 8);
         switch (caseSwitch)
         {
             case 1:
@@ -38,6 +39,9 @@ public class spawnTrash : MonoBehaviour {
 				break;
 			case 6:
 				Instantiate (trash_6, spawnSpot, transform.rotation);
+				break;
+			case 7:
+				Instantiate (trash_7, spawnSpot, transform.rotation);
 				break;
             default:
                 Instantiate(trash_1, spawnSpot, transform.rotation);
