@@ -6,8 +6,8 @@ public class binScript_rec : MonoBehaviour {
 
     public Shader grayscale;
     private Shader defaultShader;
-    private bool isDigesting = false;
-    private float timer = 0;
+   	public static bool isDigesting = false;
+	public static float timer = 0;
 
     void Start()
     {
