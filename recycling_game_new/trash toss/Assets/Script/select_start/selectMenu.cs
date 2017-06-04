@@ -23,6 +23,8 @@ public class selectMenu : MonoBehaviour {
 
 	void selectLevel1()
 	{
+        difficultySettings.levelCounter = 1;
+        difficultySettings.levelGoal = 5;
 		settings.setDifficulty(5, .08f, .05f, .02f, 10, 2f);
 		levelManager.LoadPlayScene();
 	}

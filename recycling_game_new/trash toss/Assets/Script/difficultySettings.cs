@@ -7,6 +7,7 @@ public class difficultySettings : MonoBehaviour {
     public static bool isStarted;
     public static bool isCompleted;
     public static bool gameOvered;
+    public static bool isTutorial;
     public static int score;
     public static int landfillCounter;
     public static float barGainRate;
@@ -28,6 +29,7 @@ public class difficultySettings : MonoBehaviour {
         isStarted = false;
         isCompleted = false;
         gameOvered = false;
+        isTutorial = false;
         score = 0;
         landfillCounter = 0;
 		playRecord = new List<string> ();

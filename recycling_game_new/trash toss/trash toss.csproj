@@ -116,6 +116,7 @@
     <Compile Include="Assets\Script\tutorial\spawnSystemTutorial.cs" />
     <Compile Include="Assets\Script\tutorial\startTutorial.cs" />
     <Compile Include="Assets\Script\tutorial\tutorialSpawn.cs" />
+    <Compile Include="Assets\Script\tutorial\tutorialThrow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Script\grayScale.shader" />

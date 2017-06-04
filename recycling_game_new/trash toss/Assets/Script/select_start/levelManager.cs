@@ -53,7 +53,7 @@ public class levelManager : MonoBehaviour {
 
     public void loadWebsite()
     {
-        Application.OpenURL("trashtossmobile.com");
+        Application.OpenURL("http://trashtossmobile.com");
         Debug.Log("website opened");
     }
 }

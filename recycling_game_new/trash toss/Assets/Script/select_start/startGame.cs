@@ -93,6 +93,7 @@ public class startGame : MonoBehaviour
 		{
 		case 1:
 			difficultySettings.barDropRate = difficultySettings.barDropRate * dropRate;
+            difficultySettings.barGainRate = difficultySettings.barGainRate * dropRate;
 			break;
 		case 2:
 			difficultySettings.moveSpeed = difficultySettings.moveSpeed * speed;

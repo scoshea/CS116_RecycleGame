@@ -146,7 +146,7 @@ public class throwTrash : MonoBehaviour {
             }
             Destroy(gameObject);
         }
-        else if(coll.gameObject.tag == "landfill")
+        else if(coll.gameObject.tag == "landfill" & !difficultySettings.isTutorial)
         {
             timeOut(0);
             landfillanim.SetInteger("State", 1);

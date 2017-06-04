@@ -4,8 +4,7 @@ using System.Collections;
 
 public class startTutorial : MonoBehaviour
 {	
-	public spawnTrash spawnFunc;
-	public GameObject trash1;
+	public tutorialSpawn spawnFunc;
 	public Button startButton;
 	public Button completeButton;
 	//public Button zbc;
@@ -32,12 +31,11 @@ public class startTutorial : MonoBehaviour
 	void startOnClick()
 	{
 		difficultySettings.isStarted = true;
+        difficultySettings.isTutorial = true;
 		//transform.FindChild("game start").gameObject.SetActive(false);
 		disable(startButton.gameObject);
-		disable(transform.FindChild("Level Panel").gameObject);
-		spawnFunc.spawn();
-
-	}
+        spawnFunc.spawn(2);
+    }
 
 	void completeOnClick()
 	{

@@ -30,7 +30,7 @@ public class destroyDetector : MonoBehaviour {
                 kinds = 13;
                 break;
         }
-        spawnFunc.spawn(kinds);
+        //spawnFunc.spawn(kinds);
     }
 	
 	// Update is called once per frame
