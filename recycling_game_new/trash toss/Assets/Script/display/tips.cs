@@ -7,12 +7,18 @@ public class tips : MonoBehaviour {
 
 	public static int tipsSlot1;
 	public static int tipsSlot2;
-	System.Random random = new System.Random();
+
+    System.Random random = new System.Random();
 
 	// Use this for initialization
-	void Start () {
-		tipsSlot1 = random.Next(1, 3);
-		tipsSlot2 = random.Next(1, 3);
+	void Awake () {
+		tipsSlot1 = random.Next(1, 14);
+		tipsSlot2 = random.Next(1, 14);
+
+        while (tipsSlot2 == tipsSlot1)
+        {
+            tipsSlot2 = random.Next(1, 14);
+        }
 
 	}
 

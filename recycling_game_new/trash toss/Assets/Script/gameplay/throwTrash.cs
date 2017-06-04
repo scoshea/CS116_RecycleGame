@@ -3,8 +3,7 @@ using System.Collections;
 
 public class throwTrash : MonoBehaviour {
     public float digestionTime;
-    public float multiplier;
-    public int destroyTime;
+    private int destroyTime = 3;
 
     private Vector3 lastMousePosition;
     private Vector3 newMousePosition;
@@ -12,6 +11,7 @@ public class throwTrash : MonoBehaviour {
 	private Vector3 distance2;
 	private Rigidbody2D rb;
 	private bool moveByBelt;
+    private bool moveBySwipe;
 	private bool startCounting;
 	private float time;
 
@@ -28,6 +28,7 @@ public class throwTrash : MonoBehaviour {
     void Start()
     {
 		moveByBelt = true;
+        moveBySwipe = false;
 		startCounting = false;
 		time = 0; 
 		//starts idle animations
@@ -45,7 +46,9 @@ public class throwTrash : MonoBehaviour {
     {
 		if (moveByBelt)
 			transform.Translate(Vector3.down * difficultySettings.moveSpeed);
-		timeOut ();
+        if (moveBySwipe)
+            transform.Translate(distance2 * .1f);
+        timeOut (destroyTime);
     }
 		
 
@@ -73,24 +76,36 @@ public class throwTrash : MonoBehaviour {
 		float ysquare = distance.y * distance.y;
 		distance2 = distance / (Mathf.Sqrt (xsquare + ysquare));
 
+        /*
 		rb = GetComponent<Rigidbody2D> ();
 		rb.isKinematic = false;
 		rb.AddForce (distance2 * multiplier);
+        */
 
-		startCounting = true;
+        moveBySwipe = true;
+        startCounting = true;
 		//Destroy(gameObject, destroyTime);
 		compostanim.SetInteger ("State", 0); //restarts compost idle animation
 		landfillanim.SetInteger ("State", 0); //restarts landfill idle animation
 		recycleanim.SetInteger("State", 0);
 	}
 
-	private void timeOut()
+	private void timeOut(float timer)
 	{
+        bool exist = false;
+
 		if (startCounting)
 			time += Time.deltaTime;
-		if (time > destroyTime) 
+		if (time > timer) 
 		{
-			difficultySettings.failedRecord.Add (gameObject.name.Substring(0, gameObject.name.Length - 7));
+            foreach (string items in difficultySettings.failedRecord)
+            {
+                if (items.Equals(gameObject.name.Substring(0, gameObject.name.Length - 7)))
+                    exist = true;
+            }
+            if (!exist)
+			    difficultySettings.failedRecord.Add (gameObject.name.Substring(0, gameObject.name.Length - 7));
+            difficultySettings.landfillCounter++;
 			Destroy (gameObject);
 		}
 	}
@@ -130,6 +145,11 @@ public class throwTrash : MonoBehaviour {
                 landfillanim.SetInteger("State", 1); //switches idle to eating animation
             }
             Destroy(gameObject);
+        }
+        else if(coll.gameObject.tag == "landfill")
+        {
+            timeOut(0);
+            landfillanim.SetInteger("State", 1);
         }
     }
 }

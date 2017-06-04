@@ -75,19 +75,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\BarScript.cs" />
-    <Compile Include="Assets\Script\binScript_com.cs" />
-    <Compile Include="Assets\Script\binScript_rec.cs" />
+    <Compile Include="Assets\Script\animationStart.cs" />
     <Compile Include="Assets\Script\difficultySettings.cs" />
-    <Compile Include="Assets\Script\levelManager.cs" />
-    <Compile Include="Assets\Script\scoreDisplay.cs" />
-    <Compile Include="Assets\Script\selectLevel.cs" />
-    <Compile Include="Assets\Script\spawnSystem.cs" />
-    <Compile Include="Assets\Script\spawnTrash.cs" />
-    <Compile Include="Assets\Script\startGame.cs" />
-    <Compile Include="Assets\Script\startsetting.cs" />
-    <Compile Include="Assets\Script\throwTrash.cs" />
-    <Compile Include="Assets\Script\trashMovement.cs" />
+    <Compile Include="Assets\Script\display\failedItem1.cs" />
+    <Compile Include="Assets\Script\display\failedItem2.cs" />
+    <Compile Include="Assets\Script\display\failedItem3.cs" />
+    <Compile Include="Assets\Script\display\failedItem4.cs" />
+    <Compile Include="Assets\Script\display\failedItem5.cs" />
+    <Compile Include="Assets\Script\display\failedItem6.cs" />
+    <Compile Include="Assets\Script\display\failedItem7.cs" />
+    <Compile Include="Assets\Script\display\failedItem8.cs" />
+    <Compile Include="Assets\Script\display\failedItem9.cs" />
+    <Compile Include="Assets\Script\display\goalDisplay.cs" />
+    <Compile Include="Assets\Script\display\itemCategory.cs" />
+    <Compile Include="Assets\Script\display\itemCategory_second.cs" />
+    <Compile Include="Assets\Script\display\itemDisplay.cs" />
+    <Compile Include="Assets\Script\display\itemDisplay_second.cs" />
+    <Compile Include="Assets\Script\display\levelDisplay.cs" />
+    <Compile Include="Assets\Script\display\recordDisplay.cs" />
+    <Compile Include="Assets\Script\display\tips.cs" />
+    <Compile Include="Assets\Script\gameplay\BarScript.cs" />
+    <Compile Include="Assets\Script\gameplay\binScript_com.cs" />
+    <Compile Include="Assets\Script\gameplay\binScript_rec.cs" />
+    <Compile Include="Assets\Script\gameplay\scoreDisplay.cs" />
+    <Compile Include="Assets\Script\gameplay\spawnSystem.cs" />
+    <Compile Include="Assets\Script\gameplay\spawnTrash.cs" />
+    <Compile Include="Assets\Script\gameplay\throwTrash.cs" />
+    <Compile Include="Assets\Script\gameplay\trashMovement.cs" />
+    <Compile Include="Assets\Script\powerup\ActivePower.cs" />
+    <Compile Include="Assets\Script\powerup\CDPT.cs" />
+    <Compile Include="Assets\Script\powerup\PowerSel.cs" />
+    <Compile Include="Assets\Script\powerup\otherButton.cs" />
+    <Compile Include="Assets\Script\select_start\levelManager.cs" />
+    <Compile Include="Assets\Script\select_start\selectLevel.cs" />
+    <Compile Include="Assets\Script\select_start\selectMenu.cs" />
+    <Compile Include="Assets\Script\select_start\startGame.cs" />
+    <Compile Include="Assets\Script\select_start\startsetting.cs" />
+    <Compile Include="Assets\Script\tutorial\destroyDetector.cs" />
+    <Compile Include="Assets\Script\tutorial\onDestroy.cs" />
+    <Compile Include="Assets\Script\tutorial\spawnSystemTutorial.cs" />
+    <Compile Include="Assets\Script\tutorial\startTutorial.cs" />
+    <Compile Include="Assets\Script\tutorial\tutorialSpawn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Script\grayScale.shader" />

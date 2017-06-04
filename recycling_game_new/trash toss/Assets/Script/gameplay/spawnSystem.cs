@@ -11,7 +11,7 @@ public class spawnSystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(difficultySettings.isStarted & !difficultySettings.isCompleted)
+        if(difficultySettings.isStarted & !difficultySettings.isCompleted & !difficultySettings.gameOvered)
         {
             time += Time.deltaTime;
 

@@ -6,6 +6,7 @@ public class difficultySettings : MonoBehaviour {
     public static float timer;
     public static bool isStarted;
     public static bool isCompleted;
+    public static bool gameOvered;
     public static int score;
     public static int landfillCounter;
     public static float barGainRate;
@@ -19,14 +20,16 @@ public class difficultySettings : MonoBehaviour {
 	public static List<string> playRecord;
 	public static List<string> failedRecord;
 	public static int levelCounter = 1;
+    public static int tutorialLevelCounter;
 
     // Use this for initialization
     void Start ()
     {
         isStarted = false;
         isCompleted = false;
+        gameOvered = false;
         score = 0;
-        landfillCounter = 1;
+        landfillCounter = 0;
 		playRecord = new List<string> ();
 		failedRecord = new List<string> ();
         //setDifficulty(10, 1, .01f, .05f, 10);
@@ -45,11 +48,11 @@ public class difficultySettings : MonoBehaviour {
         //lever goal
         if (score == levelGoal)
             isCompleted = true;
-        
+
 
         //game over
-		if (landfillCounter == landfillLimit)
-			levelManager.LoadTitleScene ();
+        if (landfillCounter >= landfillLimit)
+            gameOvered = true;
 	}
 
     public void setDifficulty(int goal, float gain, float drop, float speed, int limit, float gap)

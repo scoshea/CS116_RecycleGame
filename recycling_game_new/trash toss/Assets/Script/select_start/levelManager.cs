@@ -50,5 +50,10 @@ public class levelManager : MonoBehaviour {
 	public static void LoadManualScene(string scene){
 		SceneManager.LoadScene (scene);
 	}
-		
+
+    public void loadWebsite()
+    {
+        Application.OpenURL("trashtossmobile.com");
+        Debug.Log("website opened");
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class scoreDisplay : MonoBehaviour {
 
     Text text;
+    private int limit;
 
     // Use this for initialization
     void Start()
@@ -15,6 +16,7 @@ public class scoreDisplay : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        text.text = "score: " + difficultySettings.score.ToString();
+        limit = difficultySettings.landfillLimit - difficultySettings.landfillCounter;
+        text.text =  limit.ToString();
     }
 }

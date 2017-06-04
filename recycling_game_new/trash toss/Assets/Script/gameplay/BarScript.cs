@@ -11,27 +11,33 @@ public class BarScript :MonoBehaviour {
 	[SerializeField]
 	private Image content;
 	int score = difficultySettings.score;
+
 	// Use this for initialization
 	void Start () {
 		content.fillAmount = 1f;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if(difficultySettings.isStarted & !difficultySettings.isCompleted){
+	void Update ()
+    {
+		if(difficultySettings.isStarted & !difficultySettings.isCompleted)
+        {
 			content.fillAmount -= Time.deltaTime * difficultySettings.barDropRate;
-			if (score != difficultySettings.score) {
+			if (score != difficultySettings.score)
+            {
 				content.fillAmount = content.fillAmount + difficultySettings.barGainRate;
 				score = difficultySettings.score;
 			}
-			if (ActivePower.greenAdd) {
+			if (ActivePower.greenAdd)
+            {
 				content.fillAmount = content.fillAmount + .3f;
 				ActivePower.greenAdd = false;
 
-			 }
 			}
-	}
-
-
-
+            if (content.fillAmount <= 0)
+            {
+                difficultySettings.gameOvered = true;
+            }
+		}
+    }
 }

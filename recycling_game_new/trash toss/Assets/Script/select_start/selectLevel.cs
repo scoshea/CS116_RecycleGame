@@ -35,31 +35,36 @@ public class selectLevel : MonoBehaviour
 
     void selectLevel1()
     {
-        settings.setDifficulty(5, 0, 0, 0, 10, 2f);
+        settings.setDifficulty(5, 0, 0, 0, 100, 2f);
+        difficultySettings.tutorialLevelCounter = 1;
 		levelManager.LoadNextScene();
     }
 
 	void selectLevel2()
 	{
-		settings.setDifficulty(10, 0, 0, 0, 10, 2f);
-		levelManager.LoadNextScene();
+		settings.setDifficulty(8, 0, 0, 0, 100, 2f);
+        difficultySettings.tutorialLevelCounter = 2;
+        levelManager.LoadNextScene();
 	}
 
 	void selectLevel3()
 	{
-		settings.setDifficulty(15, 0, 0, 0, 10, 2f);
-		levelManager.LoadNextScene();
+		settings.setDifficulty(11, 0, 0, 0, 100, 2f);
+        difficultySettings.tutorialLevelCounter = 3;
+        levelManager.LoadNextScene();
 	}
 
 	void selectLevel4()
 	{
-		settings.setDifficulty(20, 0, 0, 0, 10, 2f);
-		levelManager.LoadNextScene();
+		settings.setDifficulty(14, 0, 0, 0, 100, 2f);
+        difficultySettings.tutorialLevelCounter = 4;
+        levelManager.LoadNextScene();
 	}
 
 	void selectLevel5()
 	{
-		settings.setDifficulty(25, 0, 0, 0, 10, 2f);
-		levelManager.LoadNextScene();
+		settings.setDifficulty(17, 0, 0, 0, 100, 2f);
+        difficultySettings.tutorialLevelCounter = 5;
+        levelManager.LoadNextScene();
 	}
 }
