@@ -104,6 +104,14 @@
     <Compile Include="Assets\Script\select_start\startGame.cs" />
     <Compile Include="Assets\Script\select_start\startsetting.cs" />
     <Compile Include="Assets\Script\tutorial\destroyDetector.cs" />
+    <Compile Include="Assets\Script\tutorial\display\itemCategory2_tutorial.cs" />
+    <Compile Include="Assets\Script\tutorial\display\itemCategory3_tutorial.cs" />
+    <Compile Include="Assets\Script\tutorial\display\itemCategory4_tutorial.cs" />
+    <Compile Include="Assets\Script\tutorial\display\itemCategory5_tutorial.cs" />
+    <Compile Include="Assets\Script\tutorial\display\itemCategory6_tutorial.cs" />
+    <Compile Include="Assets\Script\tutorial\display\itemCategory_tutorial.cs" />
+    <Compile Include="Assets\Script\tutorial\display\itemDisplay_tutorial.cs" />
+    <Compile Include="Assets\Script\tutorial\display\levelDisplay_tutorial.cs" />
     <Compile Include="Assets\Script\tutorial\onDestroy.cs" />
     <Compile Include="Assets\Script\tutorial\spawnSystemTutorial.cs" />
     <Compile Include="Assets\Script\tutorial\startTutorial.cs" />
