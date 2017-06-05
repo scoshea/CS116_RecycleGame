@@ -48,6 +48,15 @@
   <ItemGroup>
      <Compile Include="Assets\Script\animationStart.cs" />
      <Compile Include="Assets\Script\difficultySettings.cs" />
+     <Compile Include="Assets\Script\display\failedItem1.cs" />
+     <Compile Include="Assets\Script\display\failedItem2.cs" />
+     <Compile Include="Assets\Script\display\failedItem3.cs" />
+     <Compile Include="Assets\Script\display\failedItem4.cs" />
+     <Compile Include="Assets\Script\display\failedItem5.cs" />
+     <Compile Include="Assets\Script\display\failedItem6.cs" />
+     <Compile Include="Assets\Script\display\failedItem7.cs" />
+     <Compile Include="Assets\Script\display\failedItem8.cs" />
+     <Compile Include="Assets\Script\display\failedItem9.cs" />
      <Compile Include="Assets\Script\display\goalDisplay.cs" />
      <Compile Include="Assets\Script\display\itemCategory.cs" />
      <Compile Include="Assets\Script\display\itemCategory_second.cs" />
@@ -77,6 +86,8 @@
      <Compile Include="Assets\Script\tutorial\onDestroy.cs" />
      <Compile Include="Assets\Script\tutorial\spawnSystemTutorial.cs" />
      <Compile Include="Assets\Script\tutorial\startTutorial.cs" />
+     <Compile Include="Assets\Script\tutorial\tutorialSpawn.cs" />
+     <Compile Include="Assets\Script\tutorial\tutorialThrow.cs" />
      <None Include="Assets\Script\grayScale.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
