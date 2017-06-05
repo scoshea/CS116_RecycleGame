@@ -4,18 +4,19 @@ using System.Collections;
 
 public class PowerSel : MonoBehaviour {
 
-	public  Button Red;
-	public  Button Blue;
-	public  Button Green;
-	public  Button GreyB;
+	public Button Red;
+	public Button Blue;
+	public Button Green;
+	public Button GreyB;
 	public Button GreyG;
-	public  Button GreyR;
+	public Button GreyR;
 	public AudioSource source;
 	public AudioClip Plop;
 
 	void Start () {
 	ActivePower.RBP = 0;
-	
+
+
 	}
 
 	// Update is called once per frame
@@ -26,20 +27,7 @@ public class PowerSel : MonoBehaviour {
 		Pwr1.onClick.AddListener(SelectRed);
 		Pwr2.onClick.AddListener(SelectBlue);
 		Pwr3.onClick.AddListener(SelectGreen);
-		if (ActivePower.InButtonR == 1) {
-			 Red.interactable = false;
-			 GreyR.interactable = false;
 
-		} 
-		 if (ActivePower.InButtonB == 3) {
-			Blue.interactable = false;
-			GreyB.interactable = false;
-		}
-
-		 if (ActivePower.InButtonG == 2) {
-			Green.interactable = false;
-			GreyG.interactable = false;
-		}
 	}
 
 	void SelectRed()

@@ -10,7 +10,6 @@ public class CDPT : MonoBehaviour {
 	public  float store =0f;
 	float gap =0f;
 	float delaybar = 0f;
-    int Lastlandfill =  0;
 	public int prevlevel;
 	// Use this for initialization
 	void Start () {
@@ -18,7 +17,6 @@ public class CDPT : MonoBehaviour {
 	gap = difficultySettings.spawnGap;
 	delaybar = difficultySettings.barDropRate;
 	prevlevel = difficultySettings.levelCounter;
-	Lastlandfill = difficultySettings.landfillLimit;
 	}
 
 	// Update is called once per frame
@@ -47,7 +45,6 @@ public class CDPT : MonoBehaviour {
 				difficultySettings.moveSpeed = store;
 				difficultySettings.spawnGap = gap;
 				difficultySettings.barDropRate = delaybar;
-				difficultySettings.landfillLimit = Lastlandfill;
 			 }
 		}
 	}

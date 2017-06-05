@@ -6,7 +6,8 @@ public class destroyDetector : MonoBehaviour {
 	
 	public static bool isDestroyed;
 	public tutorialSpawn spawnFunc;
-    private int kinds;
+    private int itemRangeMin;
+    private int itemRangeMax;
 
 	// Use this for initialization
 	void Start () 
@@ -15,19 +16,24 @@ public class destroyDetector : MonoBehaviour {
         switch (difficultySettings.tutorialLevelCounter)
         {
             case 1:
-                kinds = 3;
+                itemRangeMin = 0;
+                itemRangeMax = 6;
                 break;
             case 2:
-                kinds = 6;
+                itemRangeMin = 7;
+                itemRangeMax = 13;
                 break;
             case 3:
-                kinds = 9;
+                itemRangeMin = 14;
+                itemRangeMax = 20;
                 break;
             case 4:
-                kinds = 11;
+                itemRangeMin = 21;
+                itemRangeMax = 27;
                 break;
             case 5:
-                kinds = 13;
+                itemRangeMin = 28;
+                itemRangeMax = 35;
                 break;
         }
         //spawnFunc.spawn(kinds);
@@ -38,7 +44,7 @@ public class destroyDetector : MonoBehaviour {
 	{
 		if (isDestroyed) 
 		{
-			spawnFunc.spawn (kinds);
+			spawnFunc.spawn (itemRangeMin, itemRangeMax);
 			isDestroyed = false;
 		}
 	}

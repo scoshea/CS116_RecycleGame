@@ -11,7 +11,7 @@ public class recordDisplay : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-        
+        /*
 		text = GetComponent<Text>();
 		string str = "on this level, you threw: \n";
 		foreach (string item in difficultySettings.playRecord) {
@@ -22,7 +22,7 @@ public class recordDisplay : MonoBehaviour {
 			str += item + "   ";
 		}
 		text.text = str;
-        
+        */
 	}
 
 	// Update is called once per frame

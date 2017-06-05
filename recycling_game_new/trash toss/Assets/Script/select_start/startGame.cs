@@ -6,13 +6,11 @@ public class startGame : MonoBehaviour
 {
     public Button startButton;
     public Button completeButton;
-    public Button nextPage;
     public Button Title;
 	public Animator ani;
 	public float dropRate;
 	public float speed;
 	public float gap;
-	public int limit;
 	//public Button zbc;
 	System.Random type = new System.Random();
 
@@ -22,8 +20,6 @@ public class startGame : MonoBehaviour
         start.onClick.AddListener(startOnClick);
         Button complete = completeButton.GetComponent<Button>();
         complete.onClick.AddListener(completeOnClick);
-        Button next = nextPage.GetComponent<Button>();
-        next.onClick.AddListener(goNextPage);
         Button title = Title.GetComponent<Button>();
         title.onClick.AddListener(goTitle);
 		//Button test = zbc.GetComponent<Button> ();
@@ -44,34 +40,26 @@ public class startGame : MonoBehaviour
         {
             disable(transform.FindChild("other").gameObject);
             enable(transform.FindChild("game over").gameObject);
-            enable(nextPage.gameObject);
+            enable(Title.gameObject);
         }
     }
     void startOnClick()
     {
         difficultySettings.isStarted = true;
         //transform.FindChild("game start").gameObject.SetActive(false);
+        enable(transform.FindChild("other").gameObject);
         disable(startButton.gameObject);
 		disable(transform.FindChild("Level Panel").gameObject);
     }
 
     void completeOnClick()
     {
-		difficultySettings.levelGoal += 5;
+		difficultySettings.levelGoal += 3;
 		changeDifficulties ();
 		difficultySettings.levelCounter++;
         disable(completeButton.gameObject);
         disable(transform.FindChild("Level complete").gameObject);
         levelManager.LoadPlayScene();
-    }
-
-    void goNextPage()
-    {
-        difficultySettings.gameOvered = false;
-        disable(transform.FindChild("game over").gameObject);
-        disable(nextPage.gameObject);
-        enable(transform.FindChild("Level complete").gameObject);
-        enable(Title.gameObject);
     }
 
     void goTitle()
@@ -88,22 +76,9 @@ public class startGame : MonoBehaviour
     private void disable(GameObject obj) { obj.SetActive(false); }
 	private void changeDifficulties()
 	{
-		int caseswitch = type.Next (1, 4);
-		switch(caseswitch)
-		{
-		case 1:
-			difficultySettings.barDropRate = difficultySettings.barDropRate * dropRate;
-            difficultySettings.barGainRate = difficultySettings.barGainRate * dropRate;
-			break;
-		case 2:
-			difficultySettings.moveSpeed = difficultySettings.moveSpeed * speed;
-			break;
-		case 3:
-			difficultySettings.spawnGap = difficultySettings.spawnGap * gap;
-			break;
-		case 4:
-			difficultySettings.landfillLimit -= limit;
-			break;
-		}
-	}
+        difficultySettings.barDropRate = difficultySettings.barDropRate * dropRate;
+        difficultySettings.barGainRate = difficultySettings.barGainRate * dropRate;
+        difficultySettings.spawnGap = difficultySettings.spawnGap * gap;
+        difficultySettings.moveSpeed = difficultySettings.moveSpeed * speed;
+    }
 }

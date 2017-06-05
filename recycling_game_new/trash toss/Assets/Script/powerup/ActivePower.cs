@@ -5,9 +5,6 @@ using System.Collections;
 public class ActivePower : MonoBehaviour {
 	public Button act;
 	public static int RBP;
-	public static int InButtonR;
-	public static int InButtonB;
-	public static int InButtonG;
 	public static float CDtimer = 5;
 	public Button startButton;
 	public difficultySettings settings;
@@ -58,7 +55,6 @@ public class ActivePower : MonoBehaviour {
 	void test()
 		{
 		// When Freeze is activated
-		InButtonR = 1 ;
 		act.interactable = false;
 		if (completebutton != null) {
 			
@@ -72,7 +68,6 @@ public class ActivePower : MonoBehaviour {
 
 	void testO(){
 		// Bonus Value when called
-		InButtonG = 2 ;
 		act.interactable = false;
 		greenAdd = true; 
 
@@ -80,9 +75,11 @@ public class ActivePower : MonoBehaviour {
 	void test1()
 	{
 		//Mystery Power Up?
-		InButtonB = 3;
 		act.interactable = false;
-		difficultySettings.landfillLimit=15;
+		if (binScript_rec.isDigesting == true || binScript_com.isDigesting == true) {
+			binScript_com.timer = 10;
+			binScript_rec.timer = 10;
+		}
 	}
 		//sound files for Powerup Button
 	public void buttonPowerupSound ()

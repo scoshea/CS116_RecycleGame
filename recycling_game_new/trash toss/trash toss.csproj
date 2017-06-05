@@ -77,15 +77,6 @@
   <ItemGroup>
     <Compile Include="Assets\Script\animationStart.cs" />
     <Compile Include="Assets\Script\difficultySettings.cs" />
-    <Compile Include="Assets\Script\display\failedItem1.cs" />
-    <Compile Include="Assets\Script\display\failedItem2.cs" />
-    <Compile Include="Assets\Script\display\failedItem3.cs" />
-    <Compile Include="Assets\Script\display\failedItem4.cs" />
-    <Compile Include="Assets\Script\display\failedItem5.cs" />
-    <Compile Include="Assets\Script\display\failedItem6.cs" />
-    <Compile Include="Assets\Script\display\failedItem7.cs" />
-    <Compile Include="Assets\Script\display\failedItem8.cs" />
-    <Compile Include="Assets\Script\display\failedItem9.cs" />
     <Compile Include="Assets\Script\display\goalDisplay.cs" />
     <Compile Include="Assets\Script\display\itemCategory.cs" />
     <Compile Include="Assets\Script\display\itemCategory_second.cs" />
@@ -106,6 +97,7 @@
     <Compile Include="Assets\Script\powerup\CDPT.cs" />
     <Compile Include="Assets\Script\powerup\PowerSel.cs" />
     <Compile Include="Assets\Script\powerup\otherButton.cs" />
+    <Compile Include="Assets\Script\screenOrientation.cs" />
     <Compile Include="Assets\Script\select_start\levelManager.cs" />
     <Compile Include="Assets\Script\select_start\selectLevel.cs" />
     <Compile Include="Assets\Script\select_start\selectMenu.cs" />

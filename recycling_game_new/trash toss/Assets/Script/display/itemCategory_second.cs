@@ -6,55 +6,22 @@ public class itemCategory_second : MonoBehaviour {
 
 	Text text;
 
-	// Use this for initialization
-	void Start()
-	{
-		text = GetComponent<Text>();
-		switch (tips.tipsSlot2){
-            case 1:
-                text.text = "--compost";
-                break;
-            case 2:
-                text.text = "--compost";
-                break;
-            case 3:
-                text.text = "--landfill";
-                break;
-            case 4:
-                text.text = "--landfill";
-                break;
-            case 5:
-                text.text = "--other";
-                break;
-            case 6:
-                text.text = "--recycle";
-                break;
-            case 7:
-                text.text = "--recycle";
-                break;
-            case 8:
-                text.text = "--recycle";
-                break;
-            case 9:
-                text.text = "--recycle";
-                break;
-            case 10:
-                text.text = "--recycle";
-                break;
-            case 11:
-                text.text = "--recycle";
-                break;
-            case 12:
-                text.text = "--recycle";
-                break;
-            case 13:
-                text.text = "--recycle";
-                break;
-        }
-	}
+    // Use this for initialization
+    void Start()
+    {
+        text = GetComponent<Text>();
+        if (tips.tipsSlot2 <= 3)
+            text.text = "--Compost";
+        else if (tips.tipsSlot2 <= 19)
+            text.text = "--Recycle";
+        else if (tips.tipsSlot2 <= 30)
+            text.text = "--Landfill";
+        else
+            text.text = "--Other";
+    }
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    void Update()
 	{
 	}
 }

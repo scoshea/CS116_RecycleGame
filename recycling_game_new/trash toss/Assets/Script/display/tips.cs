@@ -12,12 +12,12 @@ public class tips : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		tipsSlot1 = random.Next(1, 14);
-		tipsSlot2 = random.Next(1, 14);
+		tipsSlot1 = random.Next(1, 38);
+		tipsSlot2 = random.Next(1, 38);
 
         while (tipsSlot2 == tipsSlot1)
         {
-            tipsSlot2 = random.Next(1, 14);
+            tipsSlot2 = random.Next(1, 38);
         }
 
 	}
