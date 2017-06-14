@@ -32,9 +32,27 @@ public class startTutorial : MonoBehaviour
 	{
 		difficultySettings.isStarted = true;
         difficultySettings.isTutorial = true;
-		//transform.FindChild("game start").gameObject.SetActive(false);
+        //transform.FindChild("game start").gameObject.SetActive(false);
+        disable(transform.FindChild("Level Panel").gameObject);
 		disable(startButton.gameObject);
-        spawnFunc.spawn(1,2);
+        switch (difficultySettings.tutorialLevelCounter)
+        {
+            case 1:
+                spawnFunc.spawn(0, 6);
+                break;
+            case 2:
+                spawnFunc.spawn(6, 12);
+                break;
+            case 3:
+                spawnFunc.spawn(12, 18);
+                break;
+            case 4:
+                spawnFunc.spawn(18, 24);
+                break;
+            case 5:
+                spawnFunc.spawn(24, 30);
+                break;
+        }
     }
 
 	void completeOnClick()
