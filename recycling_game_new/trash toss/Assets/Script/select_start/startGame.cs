@@ -30,16 +30,16 @@ public class startGame : MonoBehaviour
     {
         if (difficultySettings.score == difficultySettings.levelGoal)
         {
-            disable(transform.FindChild("other").gameObject);
-            enable(transform.FindChild("Level complete").gameObject);
+            disable(transform.Find("other").gameObject);
+            enable(transform.Find("Level complete").gameObject);
 			ani.enabled = false;
             enable(completeButton.gameObject);
 
         }
         if (difficultySettings.gameOvered)
         {
-            disable(transform.FindChild("other").gameObject);
-            enable(transform.FindChild("game over").gameObject);
+            disable(transform.Find("other").gameObject);
+            enable(transform.Find("game over").gameObject);
             enable(Title.gameObject);
         }
     }
@@ -47,9 +47,9 @@ public class startGame : MonoBehaviour
     {
         difficultySettings.isStarted = true;
         //transform.FindChild("game start").gameObject.SetActive(false);
-        enable(transform.FindChild("other").gameObject);
+        enable(transform.Find("other").gameObject);
         disable(startButton.gameObject);
-		disable(transform.FindChild("Level Panel").gameObject);
+		disable(transform.Find("Level Panel").gameObject);
     }
 
     void completeOnClick()
@@ -58,7 +58,7 @@ public class startGame : MonoBehaviour
 		changeDifficulties ();
 		difficultySettings.levelCounter++;
         disable(completeButton.gameObject);
-        disable(transform.FindChild("Level complete").gameObject);
+        disable(transform.Find("Level complete").gameObject);
         levelManager.LoadPlayScene();
     }
 

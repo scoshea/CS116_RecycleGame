@@ -47,13 +47,25 @@ public class levelManager : MonoBehaviour {
 		SceneManager.LoadScene (0);
 	}
 
-	public static void LoadManualScene(string scene){
-		SceneManager.LoadScene (scene);
-	}
-
     public void loadWebsite()
     {
         Application.OpenURL("http://trashtossmobile.com");
         Debug.Log("website opened");
     }
+		
+	public void loadCredits()
+	{
+		SceneManager.LoadScene (5);
+	}
+
+	public void loadOptions()
+	{
+		SceneManager.LoadScene (1);
+	}
+
+	public void loadAbout()
+	{
+		SceneManager.LoadScene (6);
+	}
+
 }

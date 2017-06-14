@@ -24,7 +24,7 @@ public class startTutorial : MonoBehaviour
 	{
 		if (difficultySettings.score == difficultySettings.levelGoal)
 		{
-			enable(transform.FindChild("Level complete").gameObject);
+			enable(transform.Find("Level complete").gameObject);
 			enable(completeButton.gameObject);
 		}
 	}
@@ -33,7 +33,7 @@ public class startTutorial : MonoBehaviour
 		difficultySettings.isStarted = true;
         difficultySettings.isTutorial = true;
         //transform.FindChild("game start").gameObject.SetActive(false);
-        disable(transform.FindChild("Level Panel").gameObject);
+        disable(transform.Find("Level Panel").gameObject);
 		disable(startButton.gameObject);
         switch (difficultySettings.tutorialLevelCounter)
         {
@@ -58,7 +58,7 @@ public class startTutorial : MonoBehaviour
 	void completeOnClick()
 	{
 		disable(completeButton.gameObject);
-		disable(transform.FindChild("Level complete").gameObject);
+		disable(transform.Find("Level complete").gameObject);
 		levelManager.LoadPreviousScene();
 	}
 
