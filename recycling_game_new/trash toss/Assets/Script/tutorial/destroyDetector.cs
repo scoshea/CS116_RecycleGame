@@ -20,20 +20,20 @@ public class destroyDetector : MonoBehaviour {
                 itemRangeMax = 6;
                 break;
             case 2:
-                itemRangeMin = 6;
-                itemRangeMax = 12;
+                itemRangeMin = 7;
+                itemRangeMax = 13;
                 break;
             case 3:
-                itemRangeMin = 12;
-                itemRangeMax = 18;
+                itemRangeMin = 14;
+                itemRangeMax = 20;
                 break;
             case 4:
-                itemRangeMin = 18;
-                itemRangeMax = 24;
+                itemRangeMin = 21;
+                itemRangeMax = 27;
                 break;
             case 5:
-                itemRangeMin = 24;
-                itemRangeMax = 30;
+                itemRangeMin = 28;
+                itemRangeMax = 35;
                 break;
         }
         //spawnFunc.spawn(kinds);
