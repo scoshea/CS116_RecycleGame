@@ -49,7 +49,7 @@ public class levelManager : MonoBehaviour {
 
     public void loadWebsite()
     {
-        Application.OpenURL("http://trashtossmobile.com");
+		Application.OpenURL("http://www.cityofsantacruz.com/recycleright");
         Debug.Log("website opened");
     }
 		
@@ -68,4 +68,8 @@ public class levelManager : MonoBehaviour {
 		SceneManager.LoadScene (6);
 	}
 
+	public void loadTwitter()
+	{
+		Application.OpenURL ("https://twitter.com/TrashToss");
+	}
 }
