@@ -87,6 +87,8 @@
     <Compile Include="Assets\Script\display\tips.cs" />
     <Compile Include="Assets\Script\gameplay\BarScript.cs" />
     <Compile Include="Assets\Script\gameplay\binScript_com.cs" />
+    <Compile Include="Assets\Script\gameplay\binScript_lan.cs" />
+    <Compile Include="Assets\Script\gameplay\binScript_landfill.cs" />
     <Compile Include="Assets\Script\gameplay\binScript_rec.cs" />
     <Compile Include="Assets\Script\gameplay\scoreDisplay.cs" />
     <Compile Include="Assets\Script\gameplay\spawnSystem.cs" />

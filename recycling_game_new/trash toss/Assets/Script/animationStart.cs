@@ -8,7 +8,7 @@ public class animationStart : MonoBehaviour
 
 	public Button Text;
 	public Animator ani;
-	public Canvas yourcanvas;
+	//public Canvas yourcanvas;
 
 
 
@@ -16,7 +16,7 @@ public class animationStart : MonoBehaviour
 	{
 		Text = Text.GetComponent<Button> ();
 		ani.enabled = false;
-		yourcanvas.enabled = true;
+		//yourcanvas.enabled = true;
 	}
 
 
@@ -26,7 +26,7 @@ public class animationStart : MonoBehaviour
 		Text.enabled = true;
 		ani.enabled = true;
 		Destroy(Text,1);
-		yourcanvas.enabled = false;
+		//yourcanvas.enabled = false;
 
 	}
 }

@@ -15,7 +15,7 @@ public class spawnTrash : MonoBehaviour {
 		xOffset = 0f; // + (float)offset.NextDouble() * 4;
         Vector3 spawnSpot = spot + new Vector3(xOffset, 2, 0);
 
-        int caseSwitch = trashType.Next(1, trashItems.transform.childCount+1);
+        int caseSwitch = trashType.Next(1, trashItems.transform.childCount);
         Instantiate(trashItems.transform.GetChild(caseSwitch), spawnSpot, transform.rotation);
     }
 
