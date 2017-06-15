@@ -20,7 +20,7 @@
       <File FileName="Assets\Script\display\recordDisplay.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\display\levelDisplay.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\display\tips.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\select_start\levelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\select_start\levelManager.cs" Line="74" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
