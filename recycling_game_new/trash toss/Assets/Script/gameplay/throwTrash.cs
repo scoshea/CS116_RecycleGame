@@ -16,6 +16,7 @@ public class throwTrash : MonoBehaviour
     private bool startCounting;
     private float time;
 
+	//  Pointers to the target objects
     GameObject compost;
     GameObject landfill;
     GameObject recycle;
@@ -28,10 +29,11 @@ public class throwTrash : MonoBehaviour
 
     void Start()
     {
-        moveByBelt = true;
-        moveBySwipe = false;
-        startCounting = false;
-        time = 0;
+		//  Reset these variables every step
+        moveByBelt = true; //  move the object down if true, basically
+        moveBySwipe = false; //  set to true after the finger is released
+        startCounting = false; //  countdown til automatated item destruction when true
+        time = 0; //  presumably the time passed since the counter was activated
         //starts idle animations
         compost = GameObject.Find("composite bin");
         //compostanim = compost.GetComponent<Animator> ();
@@ -45,10 +47,15 @@ public class throwTrash : MonoBehaviour
 
     void Update()
     {
+	//  This is the shared update cycle of all throwable trash objects
         if (moveByBelt)
+			//  Literally move the item downward if it is on the belt
             transform.Translate(Vector3.down * difficultySettings.moveSpeed);
         if (moveBySwipe)
+			//  Presumably distance2 contains the direction of the swipe, 
+			//  and the decimal controls the speed.
             transform.Translate(distance2 * .1f);
+		//  What does this do?
         timeOut(destroyTime);
     }
 
@@ -61,10 +68,12 @@ public class throwTrash : MonoBehaviour
 
     void OnMouseUp()
     {
-        // disable collider so player cannot swipe twice
+		// disable collider so player cannot swipe twice (so much for that)
 
         moveByBelt = false;
         newMousePosition = Input.mousePosition;
+		//  If just distance is used, the objects move incredibly fast
+		//  but players control speed of object
         distance = newMousePosition - lastMousePosition;
 
         // making sure that x and y values are not 0
@@ -75,13 +84,8 @@ public class throwTrash : MonoBehaviour
 
         float xsquare = distance.x * distance.x;
         float ysquare = distance.y * distance.y;
+		//  so dist2 extracts just direction
         distance2 = distance / (Mathf.Sqrt(xsquare + ysquare));
-
-        /*
-		rb = GetComponent<Rigidbody2D> ();
-		rb.isKinematic = false;
-		rb.AddForce (distance2 * multiplier);
-        */
 
         moveBySwipe = true;
         startCounting = true;
@@ -89,35 +93,17 @@ public class throwTrash : MonoBehaviour
 
     private void timeOut(float timer)
     {
+		//  Throw the object in the landfill after the item counter diminishes
         //bool exist = false;
 
         if (startCounting)
             time += Time.deltaTime;
         if (time > timer)
         {
-            /*
-            foreach (string items in difficultySettings.failedRecord)
-            {
-                if (items.Equals(gameObject.name.Substring(0, gameObject.name.Length - 7)))
-                    exist = true;
-            }
-            if (!exist)
-			    difficultySettings.failedRecord.Add (gameObject.name.Substring(0, gameObject.name.Length - 7));
-                */
             difficultySettings.landfillCounter++;
             Destroy(gameObject);
         }
     }
-
-    /*
-    void OnMouseDrag()
-    {
-        Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
-        Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-
-        transform.position = objectPosition;
-    } 
-    */
 
 
     // bin collisions
