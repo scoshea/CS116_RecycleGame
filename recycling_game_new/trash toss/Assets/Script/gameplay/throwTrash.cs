@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class throwTrash : MonoBehaviour
+public class throwTrash : lerpable
 {
     public float digestionTime;
     private int destroyTime = 3;
@@ -16,6 +16,8 @@ public class throwTrash : MonoBehaviour
     private bool startCounting;
     private float time;
 
+	//  Not thrown for now.
+	private GameObject throwingTarget = null; 
 	//  Pointers to the target objects
     GameObject compost;
     GameObject landfill;
@@ -27,8 +29,9 @@ public class throwTrash : MonoBehaviour
     Animator recycleanim;
     */
 
-    void Start()
+	public override void Start()
     {
+		base.Start();
 		//  Reset these variables every step
         moveByBelt = true; //  move the object down if true, basically
         moveBySwipe = false; //  set to true after the finger is released
@@ -38,27 +41,51 @@ public class throwTrash : MonoBehaviour
         compost = GameObject.Find("composite bin");
         //compostanim = compost.GetComponent<Animator> ();
 
-        landfill = GameObject.Find("landfill bin");
+		landfill = GameObject.Find("landfill bin");
         //landfillanim = landfill.GetComponent<Animator> ();
 
         recycle = GameObject.Find("recycle bin");
         //recycleanim = recycle.GetComponent<Animator> ();
     }
 
-    void Update()
+
+    public override void Update()
     {
+		base.Update();
 	//  This is the shared update cycle of all throwable trash objects
-        if (moveByBelt)
-			//  Literally move the item downward if it is on the belt
-            transform.Translate(Vector3.down * difficultySettings.moveSpeed);
-        if (moveBySwipe)
+		if (isLerping ()) {
+			//  Do nothing in terms of physics.
+			//  Let the lerp handle it.
+
+		} else if (moveBySwipe) {
 			//  Presumably distance2 contains the direction of the swipe, 
 			//  and the decimal controls the speed.
-            transform.Translate(distance2 * .1f);
+			//transform.Translate (distance2 * .1f);
+			throwAt(recycle);
+
+		} else if (moveByBelt) {
+			//  Literally move the item downward if it is on the belt
+			transform.Translate (Vector3.down * difficultySettings.moveSpeed);
+		} 
 		//  What does this do?
         timeOut(destroyTime);
     }
 
+	public void throwAt(GameObject targetObj){
+		//  Throws the current trash object at the specified gameObject
+		setLerpTarget(targetObj.transform.position);
+		throwingTarget = targetObj;
+	}
+
+	public override void lerpTargetReached(){
+		base.lerpTargetReached (); //  turns the lerp mechanic off
+		//  Now activate the throwing target as if there was a collision.
+		if (null != throwingTarget) {
+			checkForGoal (throwingTarget);
+			//  and then clean up
+			throwingTarget = null;
+		}
+	}
 
     void OnMouseDown()
     {
@@ -91,6 +118,7 @@ public class throwTrash : MonoBehaviour
         startCounting = true;
     }
 
+
     private void timeOut(float timer)
     {
 		//  Throw the object in the landfill after the item counter diminishes
@@ -109,25 +137,39 @@ public class throwTrash : MonoBehaviour
     // bin collisions
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == gameObject.tag)
-        {
-            difficultySettings.score += 1;
-            difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
-            if (gameObject.tag == "recycle")
-            {
-                difficultySettings.digestionTime_rec = digestionTime;
-            }
-
-            if (gameObject.tag == "composite")
-            {
-                difficultySettings.digestionTime_com = digestionTime;
-            }
-            Destroy(gameObject);
-        }
-        else if (coll.gameObject.tag == "landfill" & !difficultySettings.isTutorial)
-        {
-            difficultySettings.landfillCounter++;
-            Destroy(gameObject);
-        }
+		Debug.Log("Goal: " + checkForGoal(coll.gameObject));
     }
+
+	//  bin collisions
+	public bool checkForGoal(GameObject other){
+	//  checks for if the current trash scored a point and performs the following logic if so.
+	//  returns true on success
+		if (other.tag == gameObject.tag)
+		{
+			difficultySettings.score += 1;
+			difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
+			if (gameObject.tag == "recycle")
+			{
+				difficultySettings.digestionTime_rec = digestionTime;
+			}
+
+			if (gameObject.tag == "composite")
+			{
+				difficultySettings.digestionTime_com = digestionTime;
+			}
+			Destroy(gameObject);
+			return true;
+		}
+		else if (other.tag == "landfill" & !difficultySettings.isTutorial)
+		{
+			difficultySettings.landfillCounter++;
+			Destroy(gameObject);
+			return true;
+		}
+		//  Destroy in all cases, regardless of success
+		Destroy(gameObject); //  added
+		return false;
+	}
+
+
 }
