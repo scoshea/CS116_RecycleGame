@@ -137,7 +137,7 @@ public class throwTrash : lerpable
     // bin collisions
     void OnTriggerEnter2D(Collider2D coll)
     {
-		Debug.Log("Goal: " + checkForGoal(coll.gameObject));
+		checkForGoal(coll.gameObject);
     }
 
 	//  bin collisions
@@ -166,8 +166,6 @@ public class throwTrash : lerpable
 			Destroy(gameObject);
 			return true;
 		}
-		//  Destroy in all cases, regardless of success
-		Destroy(gameObject); //  added
 		return false;
 	}
 

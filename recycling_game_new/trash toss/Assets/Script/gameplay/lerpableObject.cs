@@ -34,7 +34,6 @@ public class lerpable : MonoBehaviour
 	virtual public void lerpTargetReached(){
 	//  Events scheduled to occur when the lerp reaches the target
 		//  For example, turn off lerping
-		Debug.Log ("Lerp off");
 		startTime = -1;
 		journeyLength = -1;
 	}
