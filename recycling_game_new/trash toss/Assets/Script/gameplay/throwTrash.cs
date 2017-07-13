@@ -58,16 +58,39 @@ public class throwTrash : lerpable
 			//  Let the lerp handle it.
 
 		} else if (moveBySwipe) {
+			//  The buffer is the drag distance that is tolerated before anything happens
+			float distanceBuffer = 0.2f;
+			float horizontalSensitivity = 0.2f;
 			//  Presumably distance2 contains the direction of the swipe, 
 			//  and the decimal controls the speed.
 			//transform.Translate (distance2 * .1f);
-			throwAt(recycle);
+			//  Convert the drag vector into a discrete direction
+			Debug.Log("DistL: " + distance);
+			if (Mathf.Abs (distance2.x) > horizontalSensitivity) {
+				//  horizontal > vertical
+				if (distance2.x > distanceBuffer) {
+					//right
+					throwAt(compost);
+				} else if (distance2.x < -distanceBuffer) {
+					//left
+					throwAt(recycle);
+				}
+			} else {
+				//  v > h
+				if (distance2.y > distanceBuffer) {
+					//down
+					throwAt(landfill);
+				} else if (distance2.y < -distanceBuffer) {
+					//up
+					throwAt(landfill);
+				}
+			}
 
 		} else if (moveByBelt) {
 			//  Literally move the item downward if it is on the belt
 			transform.Translate (Vector3.down * difficultySettings.moveSpeed);
 		} 
-		//  What does this do?
+		//  Check to see if the object should be destroyed yet
         timeOut(destroyTime);
     }
 
@@ -159,13 +182,16 @@ public class throwTrash : lerpable
 			}
 			Destroy(gameObject);
 			return true;
-		}
+		} /*
 		else if (other.tag == "landfill" & !difficultySettings.isTutorial)
 		{
 			difficultySettings.landfillCounter++;
 			Destroy(gameObject);
 			return true;
-		}
+		} */
+		//  Destroy in all cases, regardless of success
+		difficultySettings.landfillCounter++;
+		Destroy(gameObject); //  added
 		return false;
 	}
 
