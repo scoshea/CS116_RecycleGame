@@ -79,10 +79,14 @@ public class throwTrash : lerpable
 				//  v > h
 				if (distance2.y > distanceBuffer) {
 					//down
-					throwAt(landfill);
+					throwAt (landfill);
 				} else if (distance2.y < -distanceBuffer) {
 					//up
-					throwAt(landfill);
+					throwAt (landfill);
+				} else {
+					//  Neither swiped up nor down. Do neither
+					moveByBelt = true;
+					moveBySwipe = false;
 				}
 			}
 
@@ -125,12 +129,6 @@ public class throwTrash : lerpable
 		//  If just distance is used, the objects move incredibly fast
 		//  but players control speed of object
         distance = newMousePosition - lastMousePosition;
-
-        // making sure that x and y values are not 0
-        if (Mathf.Abs(distance.x) < 0.1f)
-            distance.x = 0.1f;
-        if (Mathf.Abs(distance.y) < 0.1f)
-            distance.y = 0.1f;
 
         float xsquare = distance.x * distance.x;
         float ysquare = distance.y * distance.y;
