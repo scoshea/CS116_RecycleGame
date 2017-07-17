@@ -133,7 +133,9 @@ public class throwTrash : lerpable
         float xsquare = distance.x * distance.x;
         float ysquare = distance.y * distance.y;
 		//  so dist2 extracts just direction
-        distance2 = distance / (Mathf.Sqrt(xsquare + ysquare));
+		distance2 = distance / distance.magnitude;
+
+		speed = distance.magnitude/10f;
 
         moveBySwipe = true;
         startCounting = true;
