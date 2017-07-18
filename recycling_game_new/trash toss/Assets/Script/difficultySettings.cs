@@ -8,13 +8,13 @@ public class difficultySettings : MonoBehaviour {
     public static bool isCompleted;
     public static bool gameOvered;
     public static bool isTutorial;
-    public static int score;
+    public static int score; // lives/pollution bar
     public static int landfillCounter;
     public static float barGainRate;
     public static float barDropRate;
     public static float moveSpeed;
     public static int levelGoal;
-    public static int landfillLimit;
+    public static int landfillLimit; // chances before failing endless mode
     public static float spawnGap;
     public static float digestionTime_rec;
     public static float digestionTime_com;

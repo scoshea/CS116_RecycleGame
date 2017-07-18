@@ -136,7 +136,7 @@ public class throwTrash : lerpable
 		distance2 = distance / distance.magnitude;
 
 		speed = distance.magnitude/10f;
-
+    
         moveBySwipe = true;
         startCounting = true;
     }
