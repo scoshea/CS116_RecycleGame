@@ -6,9 +6,6 @@ public class onDestroy : MonoBehaviour {
 
 	void OnDestroy()
 	{
-        if (destroyDetector.isDestroyed == false)
-            secondStar.DestroyedCount++;
-        destroyDetector.isDestroyed = true;
- 
-    }
+		destroyDetector.isDestroyed = true;
+	}
 }

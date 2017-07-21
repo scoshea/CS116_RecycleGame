@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class destroyDetector : MonoBehaviour {
-
+	
 	public static bool isDestroyed;
 	public tutorialSpawn spawnFunc;
     private int itemRangeMin;
     private int itemRangeMax;
-    
 
-    // Use this for initialization
-    void Start () 
+	// Use this for initialization
+	void Start () 
 	{
-        isDestroyed = false;
+		isDestroyed = false;
         switch (difficultySettings.tutorialLevelCounter)
         {
             case 1:
@@ -43,12 +42,10 @@ public class destroyDetector : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-        
-
-        if (isDestroyed) 
+		if (isDestroyed) 
 		{
-            spawnFunc.spawn (itemRangeMin, itemRangeMax);
+			spawnFunc.spawn (itemRangeMin, itemRangeMax);
 			isDestroyed = false;
-        }
+		}
 	}
 }
