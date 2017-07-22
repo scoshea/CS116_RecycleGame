@@ -35,6 +35,7 @@ public class difficultySettings : MonoBehaviour {
 		playRecord = new List<string> ();
 		failedRecord = new List<string> ();
         //setDifficulty(10, 1, .01f, .05f, 10);
+        secondStar.DestroyedCount = 0;
         print("game start: level goal: " + levelGoal + "    gainRate: " + barGainRate + "    dropRate" + barDropRate
             + "    speed: " + moveSpeed + "    limit: " + landfillLimit);
 	}
@@ -47,7 +48,7 @@ public class difficultySettings : MonoBehaviour {
         //print(timer);
 
 
-        //lever goal
+        //level goal
         if (score == levelGoal)
             isCompleted = true;
 

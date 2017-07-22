@@ -135,7 +135,7 @@ public class throwTrash : lerpable
 		//  so dist2 extracts just direction
 		distance2 = distance / distance.magnitude;
 
-		speed = distance.magnitude/10f;
+		speed = distance.magnitude/20f;
     
         moveBySwipe = true;
         startCounting = true;
