@@ -67,8 +67,8 @@ public class bin_controller : MonoBehaviour {
 		float accelerationMagnitude = 0.01f;
 		float targetLidPos = DEFAULT_LID_POSITION;
 		if (anticipatingGood) {
-			Debug.Log("ANTICIPATE GOOD");
-			targetLidPos = READY_LID_POSITION;
+			setLid(READY_LID_POSITION);
+
 		}
 		//  Determine lid accel direction
 		if (lidPosition > targetLidPos) {
@@ -139,7 +139,7 @@ public class bin_controller : MonoBehaviour {
 	//  The animate functions don't change scoring logic.
 	public void animateCorrect(){
 		//  Animate the bin as if this was the right bin to throw trash into.
-		setLid(1f); //  open lid completely
+		//setLid(0f); //  open lid completely
 		setMood(capMood(currentMood +1f)); //  Increase the mood
 		normalizedBreath = 0f;
 	}

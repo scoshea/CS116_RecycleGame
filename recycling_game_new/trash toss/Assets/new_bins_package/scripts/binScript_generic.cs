@@ -37,7 +37,7 @@ public class binScript_generic : MonoBehaviour
 		if (coll.gameObject.tag == this.gameObject.tag)
         {
             //animationState.SetInteger("State", 1); //switches idle to eating animation
-            gameObject.GetComponent<Collider2D>().enabled = false;
+            //gameObject.GetComponent<Collider2D>().enabled = false;
             isDigesting = true;
         }
     }
