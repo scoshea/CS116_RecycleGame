@@ -72,7 +72,6 @@ public class throwTrash : lerpable
 			//  and the decimal controls the speed.
 			//transform.Translate (distance2 * .1f);
 			//  Convert the drag vector into a discrete direction
-			Debug.Log("DistL: " + distance);
 			if (Mathf.Abs (distance2.x) > horizontalSensitivity) {
 				//  horizontal > vertical
 				if (distance2.x > distanceBuffer) {

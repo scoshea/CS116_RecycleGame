@@ -67,6 +67,7 @@ public class bin_controller : MonoBehaviour {
 		float accelerationMagnitude = 0.01f;
 		float targetLidPos = DEFAULT_LID_POSITION;
 		if (anticipatingGood) {
+			Debug.Log("ANTICIPATE GOOD");
 			targetLidPos = READY_LID_POSITION;
 		}
 		//  Determine lid accel direction
