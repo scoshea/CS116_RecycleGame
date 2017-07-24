@@ -30,7 +30,7 @@ public class startGame : MonoBehaviour
     {
         if (difficultySettings.score == difficultySettings.levelGoal)
         {
-            disable(transform.Find("other").gameObject);
+            //disable(transform.Find("other").gameObject);
             enable(transform.Find("Level complete").gameObject);
 			ani.enabled = false;
             enable(completeButton.gameObject);
@@ -38,7 +38,7 @@ public class startGame : MonoBehaviour
         }
         if (difficultySettings.gameOvered)
         {
-            disable(transform.Find("other").gameObject);
+            //disable(transform.Find("other").gameObject);
             enable(transform.Find("game over").gameObject);
             enable(Title.gameObject);
         }
@@ -47,7 +47,7 @@ public class startGame : MonoBehaviour
     {
         difficultySettings.isStarted = true;
         //transform.FindChild("game start").gameObject.SetActive(false);
-        enable(transform.Find("other").gameObject);
+        //enable(transform.Find("other").gameObject);
         disable(startButton.gameObject);
 		disable(transform.Find("Level Panel").gameObject);
     }

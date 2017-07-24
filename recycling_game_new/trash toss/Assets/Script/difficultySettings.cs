@@ -8,13 +8,13 @@ public class difficultySettings : MonoBehaviour {
     public static bool isCompleted;
     public static bool gameOvered;
     public static bool isTutorial;
-    public static int score;
+    public static int score; // lives/pollution bar
     public static int landfillCounter;
     public static float barGainRate;
     public static float barDropRate;
     public static float moveSpeed;
     public static int levelGoal;
-    public static int landfillLimit;
+    public static int landfillLimit; // chances before failing endless mode
     public static float spawnGap;
     public static float digestionTime_rec;
     public static float digestionTime_com;
@@ -35,6 +35,7 @@ public class difficultySettings : MonoBehaviour {
 		playRecord = new List<string> ();
 		failedRecord = new List<string> ();
         //setDifficulty(10, 1, .01f, .05f, 10);
+        secondStar.DestroyedCount = 0;
         print("game start: level goal: " + levelGoal + "    gainRate: " + barGainRate + "    dropRate" + barDropRate
             + "    speed: " + moveSpeed + "    limit: " + landfillLimit);
 	}
@@ -47,7 +48,7 @@ public class difficultySettings : MonoBehaviour {
         //print(timer);
 
 
-        //lever goal
+        //level goal
         if (score == levelGoal)
             isCompleted = true;
 
