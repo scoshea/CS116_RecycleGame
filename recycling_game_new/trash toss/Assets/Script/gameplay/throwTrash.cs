@@ -34,7 +34,7 @@ public class throwTrash : lerpable
 		startCounting = false; //  countdown til automatated item destruction when true
 		time = 0; //  presumably the time passed since the counter was activated
 		//starts idle animations
-		compost = GameObject.Find("compost bin");
+		compost = GameObject.Find("composite bin");
 		//compostanim = compost.GetComponent<Animator> ();
 
 		landfill = GameObject.Find("landfill bin");
@@ -43,7 +43,7 @@ public class throwTrash : lerpable
 		recycle = GameObject.Find("recycle bin");
 		//recycleanim = recycle.GetComponent<Animator> ();
 
-		recycle = GameObject.Find("other bin");
+		otherBin = GameObject.Find("other bin");
 	}
 
 
@@ -86,10 +86,10 @@ public class throwTrash : lerpable
 				//  v > h
 				if (distance2.y > distanceBuffer) {
 					//down
-					throwAt (landfill);
+					throwAt (otherBin);
 				} else if (distance2.y < -distanceBuffer) {
 					//up
-					throwAt (otherBin);
+					throwAt (landfill);
 				} else {
 					//  Neither swiped up nor down. Do neither
 					moveByBelt = true;
