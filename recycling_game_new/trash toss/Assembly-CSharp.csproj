@@ -59,7 +59,6 @@
      <Compile Include="Assets\Script\display\tips.cs" />
      <Compile Include="Assets\Script\gameplay\BarScript.cs" />
      <Compile Include="Assets\Script\gameplay\binScript_com.cs" />
-     <Compile Include="Assets\Script\gameplay\binScript_lan.cs" />
      <Compile Include="Assets\Script\gameplay\binScript_landfill.cs" />
      <Compile Include="Assets\Script\gameplay\binScript_rec.cs" />
      <Compile Include="Assets\Script\gameplay\lerpableObject.cs" />
@@ -99,7 +98,6 @@
      <Compile Include="Assets\new_bins_package\scripts\blink_open.cs" />
      <Compile Include="Assets\new_bins_package\scripts\eyesController.cs" />
      <Compile Include="Assets\new_bins_package\scripts\lid_behavior.cs" />
-     <Compile Include="Assets\new_bins_package\throwTrash.cs" />
      <None Include="Assets\Script\grayScale.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
